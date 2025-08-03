@@ -9,20 +9,17 @@ class Solution {
                 res+=s.charAt(i);
             }
         }
-        return palindrome(res);
-    }
-    public boolean palindrome(String str)
-    {
-        int l=str.length();
+        int l=res.length();
         if(l==1) return true;
         int i=0;
-        int j=str.length()-1;
+        int j=res.length()-1;
         while(i<j)
         {
-            if(str.charAt(i)!=str.charAt(j)) return false;
+            if(res.charAt(i)!=res.charAt(j)) return false;
             i++;
             j--;
         }
         return true;
     }
+    
 }
