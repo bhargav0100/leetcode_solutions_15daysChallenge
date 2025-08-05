@@ -1,7 +1,6 @@
 class Solution {
     public String longestPalindrome(String s) {
         if(s.length()<=1) return s;
-        int max=1;
         String str=s.substring(0,1);
         for(int i=1;i<s.length();i++)
         {
