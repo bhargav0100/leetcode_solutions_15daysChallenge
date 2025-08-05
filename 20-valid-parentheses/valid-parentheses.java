@@ -1,17 +1,25 @@
 class Solution {
     public boolean isValid(String s) {
         if(s.length()%2!=0) return false;
-        boolean value=true;
-        while(value)
+        Stack<Character>stack=new Stack();
+        for(int i=0;i<s.length();i++)
         {
-            int original_length=s.length();
-            s=s.replace("()","");
-            s=s.replace("{}","");
-            s=s.replace("[]","");
-            int new_length=s.length();
-            if(original_length==new_length) return false;
-            if(new_length==0) value=false;
+            if(s.charAt(i)=='(')
+            {
+                stack.push(')');
+            }
+            else if(s.charAt(i)=='{')
+            {
+                stack.push('}');
+            }
+            else if(s.charAt(i)=='[')
+            {
+                stack.push(']');
+            }
+            else if(stack.isEmpty() || stack.pop()!=s.charAt(i)){
+                return false;
+            }
         }
-        return true;
+        return stack.isEmpty();
     }
 }
