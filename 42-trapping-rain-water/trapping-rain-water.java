@@ -21,7 +21,7 @@ class Solution {
             }
             else
             {
-                if(height[r]<=rmax)
+                if(height[r]<rmax)
                 {
                     count+=rmax-height[r];
                 }
