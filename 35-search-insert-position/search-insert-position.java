@@ -18,9 +18,6 @@ class Solution {
             {
                 start=mid+1;
             }
-            else{
-                break;
-            }
         }
         if(nums[mid]>target)
         {
