@@ -14,6 +14,6 @@ class Solution {
                 m.put(numbers[i],i+1);
             }
         }        
-        return new int[] {};
+        return new int[] {-1,-1};
     }
 }
