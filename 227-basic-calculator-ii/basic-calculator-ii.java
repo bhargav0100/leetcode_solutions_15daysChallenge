@@ -31,7 +31,6 @@ class Solution {
                 opr=s.charAt(i);
             }
         }
-        number=0;
         for(Integer i:stack)
         {
             number+=i;
