@@ -10,8 +10,7 @@ class Solution {
             mod=sum%k;
             if(m.containsKey(mod))
             {
-                int index=m.get(mod);
-                if(i-1!=index)
+                if(i-1!=m.get(mod))
                 {
                     return true;
                 }
