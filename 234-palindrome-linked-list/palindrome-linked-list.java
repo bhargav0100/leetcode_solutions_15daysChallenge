@@ -15,6 +15,7 @@ class Solution {
         ListNode curr=head;
         while(curr!=null)
         {
+            s.push(curr);
             curr=curr.next;
             length++;
         }
@@ -22,28 +23,15 @@ class Solution {
         {
             return true;
         }
-        int n=length/2;
         curr=head;
         for(int i=1;i<=length;i++)
         {
-            if(length%2!=0 && i==n+1)
+            ListNode temp=s.pop();
+            if(temp.val!=curr.val)
             {
-                curr=curr.next;
+                return false;
             }
-            else if(i<=n)
-            {
-                s.push(curr);
-                curr=curr.next;
-            }
-            else
-            {
-                ListNode temp=s.pop();
-                if(temp.val!=curr.val)
-                {
-                    return false;
-                }
-                curr=curr.next;
-            }
+            curr=curr.next;
         }
         return true;
     }
