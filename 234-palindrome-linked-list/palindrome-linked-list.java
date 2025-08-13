@@ -13,18 +13,23 @@ class Solution {
         Stack<ListNode>s=new Stack();
         int length=0;
         ListNode curr=head;
-        while(curr!=null)
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null)
         {
             s.push(curr);
+            fast=fast.next.next;
             curr=curr.next;
             length++;
         }
-        if(length==1)
+        if(fast!=null)
+        {
+            curr=curr.next;
+        }
+        if(length==0)
         {
             return true;
         }
-        curr=head;
-        for(int i=1;i<=length/2;i++)
+        for(int i=1;i<=length;i++)
         {
             ListNode temp=s.pop();
             if(temp.val!=curr.val)
