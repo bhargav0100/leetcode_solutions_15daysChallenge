@@ -21,11 +21,9 @@ class Solution {
         for(int [] c:st)
         { 
             char ch=(char)c[0];
-            int i=0;
-            while(i<c[1])
+            while(c[1]-->0)
             {
                 res+=ch;
-                i++;
             }
         }
         return res;
